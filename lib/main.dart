@@ -1,0 +1,26 @@
+import 'package:flutter/material.dart';
+
+import 'detail_screens.dart';
+import 'menu_screen.dart';
+
+void main() => runApp(const PizzaStoreApp());
+
+class PizzaStoreApp extends StatelessWidget {
+  const PizzaStoreApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Pizza Store',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(colorSchemeSeed: Colors.orange, useMaterial3: true),
+      initialRoute: 'menu',
+      routes: {
+        'menu': (context) => const MenuScreen(),
+        'vegetable': (context) => const VegetableScreen(),
+        'cheese': (context) => const CheeseScreen(),
+        'fries': (context) => const FriesScreen(),
+      },
+    );
+  }
+}
